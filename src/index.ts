@@ -102,7 +102,7 @@ io.on('connection', (socket: Socket) => {
 });
 
 server.listen(PORT, () => {
-  console.log('listening on *:3000');
+  console.log('listening on ', PORT);
 
   // Timer to check if messages are greater than a threshold
   setInterval(()=>{
