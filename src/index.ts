@@ -10,6 +10,8 @@ const users = new Set<string>();
 let messages: MessageData[] = [];
 const notifications = new Set<string>();
 
+const PORT = process.env.PORT || 3000;
+
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
@@ -99,7 +101,7 @@ io.on('connection', (socket: Socket) => {
   });
 });
 
-server.listen(3000, () => {
+server.listen(PORT, () => {
   console.log('listening on *:3000');
 
   // Timer to check if messages are greater than a threshold
