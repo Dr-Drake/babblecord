@@ -6,7 +6,7 @@
             <i class="fas fa-face-smile text-7xl lg:text-4xl text-white"></i>
             <h2 class="text-white text-6xl lg:text-3xl ml-5">BabbleCord</h2>
         </div>
-        <button class="bg-white lg:py-1 sm:py-3 lg:px-2 sm:px-4 text-chat-blue rounded-md lg:text-lg sm:text-4xl">Leave Room</button>
+        <button id="leave-chat-btn" class="bg-white lg:py-1 sm:py-3 lg:px-2 sm:px-4 text-chat-blue rounded-md lg:text-lg sm:text-4xl">Leave Room</button>
     </div>
 
     <!-- Chat Display -->
@@ -21,7 +21,23 @@
             </div>
         </div>
         <div class="flex-1 p-4" id="chat-display">
-            
+            <p class="text-gray-600 text-xl lg:text-sm text-center" id="join-notification">
+               BabbleCord!
+            </p>
+            <div class="flex justify-start my-5% lg:my-3" id="other-chat">
+                <div class="bg-gray-200 rounded-lg px-4 py-2 lg:max-w-lg">
+                    <p class="text-2xl lg:text-xs text-chat-dark-blue mb-3">BabbleCord</p>
+                    <p class="text-4xl lg:text-sm leading-normal">Welcome to BabbleCord</p>
+                </div>
+            </div>
+            <div class="flex justify-end my-5% lg:my-3%" id="you-chat">
+                <div class="bg-blue-500 rounded-lg px-4 py-2 lg:max-w-lg">
+                    <p class="text-2xl lg:text-xs text-bubble-blue mb-3">BabbleCord</p>
+                    <p class="text-4xl lg:text-sm text-white leading-normal">
+                        Try sending a message
+                    </p>
+                  </div>
+            </div>
         </div>
     </div>
 

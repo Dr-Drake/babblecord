@@ -66,6 +66,22 @@ io.on('connection', (socket: Socket) => {
     messages.push(data);
   });
 
+  socket.on('userLeaving', () => {
+    console.log(`${socket.data.username} is leaving...`);
+    users.delete(socket.data.username);
+    io.to('chatroom').emit('userDisconnect', socket.data.username);
+    io.to('chatroom').emit('updateUserList', Array.from(users));
+
+    if (!notifications.has(`👤 ${socket.data.username} has left the chatroom`)) {
+      messages.push({
+        username: socket.data.username, 
+        message: `👤 ${socket.data.username} has left the chatroom`,
+        time: new Date().toLocaleTimeString(),
+        type: 'notification'
+      })
+    }
+  });
+
   socket.on('disconnect', () => {
     console.log(`${socket.data.username} disconnected`);
     users.delete(socket.data.username);

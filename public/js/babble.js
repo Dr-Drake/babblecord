@@ -155,3 +155,13 @@ chatForm.addEventListener('submit', (event) => {
     // clear the message input
     messageInput.value = '';
 });
+
+// When the user presses leave room
+const leaveButton = document.getElementById('leave-chat-btn');
+leaveButton.addEventListener('click', ()=>{
+    if (confirm("Are you sure you want to exit the chatroom?")) {
+        socket.emit('userLeaving', localStorage.getItem('bcordName'));
+        localStorage.removeItem('bcordName');
+        location.reload();
+    }
+})

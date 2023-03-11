@@ -18,3 +18,21 @@
     overflow-y: scroll;
     max-height: 70vh;
 }
+
+.other-chat-container{
+    display: flex;
+    justify-content: start;
+    margin: 15px 0;
+}
+
+.other-chat-bubble{
+    background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+@media screen and (min-width: 1024p) {
+    .other-chat-bubble{
+        max-width: 32rem;
+    }
+}

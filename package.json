@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-css": "postcss public/styles/tailwind.css -o public/build/style.css",
+    "build-css": "postcss dist/public/styles/tailwind.css -o dist/public/styles/style.css",
     "watch-css": "postcss public/styles/tailwind.css -o public/styles/style.css --watch",
     "dev": "NODE_ENV=development nodemon",
-    "build": "npx tsc && cpy \"src/views/**/*\" \"dist/src/views\" && cpy \"public\" \"dist\"",
+    "build": "npx tsc && cpy \"src/views/**/*\" \"dist/src/views\" && cpy \"public\" \"dist\" && cpy \"postcss.config.js\" \"dist/\" && cpy \"tailwind.config.js\" \"dist/\" && yarn build-css",
     "start": "node ./dist/src/index.js"
   },
   "author": "Ikem Ezechukwu",
