@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.chat-app{
+    max-height: 100vh;
+    height: 100vh;
+}
+
+#user-list {
+    overflow-y: scroll;
+    max-height: calc(60vh); /* change 220px to adjust the height of the header and leave room button */
+}
+
+#chat-display{
+    overflow-y: scroll;
+    max-height: 70vh;
+}
